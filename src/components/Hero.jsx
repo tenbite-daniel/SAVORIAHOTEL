@@ -79,7 +79,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="w-screen min-h-[70vh] relative overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
+        <section id="hero" className="w-screen min-h-[70vh] relative overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
             <div className="relative w-full h-[70vh] min-h-[320px]">
                 {slides.map((slide, idx) => (
                     <img

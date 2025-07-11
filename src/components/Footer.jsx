@@ -32,9 +32,9 @@ const PhoneIcon = () => (
 );
 
 const EmailIcon = () => (
-   <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.3125 0.5C0.587891 0.5 0 1.08789 0 1.8125C0 2.22539 0.194141 2.61367 0.525 2.8625L6.475 7.325C6.78672 7.55742 7.21328 7.55742 7.525 7.325L13.475 2.8625C13.8059 2.61367 14 2.22539 14 1.8125C14 1.08789 13.4121 0.5 12.6875 0.5H1.3125ZM0 3.5625V9.25C0 10.2152 0.784766 11 1.75 11H12.25C13.2152 11 14 10.2152 14 9.25V3.5625L8.05 8.025C7.42656 8.49258 6.57344 8.49258 5.95 8.025L0 3.5625Z" fill="currentColor" className="text-gray-300 dark:text-gray-600"/>
-</svg>
+    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.3125 0.5C0.587891 0.5 0 1.08789 0 1.8125C0 2.22539 0.194141 2.61367 0.525 2.8625L6.475 7.325C6.78672 7.55742 7.21328 7.55742 7.525 7.325L13.475 2.8625C13.8059 2.61367 14 2.22539 14 1.8125C14 1.08789 13.4121 0.5 12.6875 0.5H1.3125ZM0 3.5625V9.25C0 10.2152 0.784766 11 1.75 11H12.25C13.2152 11 14 10.2152 14 9.25V3.5625L8.05 8.025C7.42656 8.49258 6.57344 8.49258 5.95 8.025L0 3.5625Z" fill="currentColor" className="text-gray-300 dark:text-gray-600"/>
+    </svg>
 );
 
 const LocationIcon = () => (
@@ -147,16 +147,26 @@ const Footer = () => {
                     </div>
                     <ul className="list-none p-0 m-0">
                         {[
-                            { name: "Home", href: "/" },
-                            { name: "Menu", href: "/menu" },
-                            { name: "Our Story", href: "/our-story" },
-                            { name: "Feedback", href: "/feedback" },
+                            { name: "Home", href: "#hero" },
+                            { name: "Menu", href: "#menu" },
+                            { name: "Our Story", href: "#story" },
+                            { name: "Reservation", href: "#reservation" },
                         ].map((item) => (
                             <li
                                 key={item.name}
                                 className="font-normal text-base leading-5 tracking-normal mb-2 text-gray-300 dark:text-gray-600"
                             >
-                                <a href={item.href} className="hover:underline hover:text-white dark:hover:text-gray-900 transition-colors">
+                                <a 
+                                    href={item.href} 
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const target = document.querySelector(item.href);
+                                        if (target) {
+                                            target.scrollIntoView({ behavior: "smooth" });
+                                        }
+                                    }}
+                                    className="hover:underline hover:text-white dark:hover:text-gray-900 transition-colors cursor-pointer"
+                                >
                                     {item.name}
                                 </a>
                             </li>
@@ -196,13 +206,13 @@ const Footer = () => {
                         Hours
                     </div>
                     <div className="font-normal text-base leading-5 text-gray-300 dark:text-gray-600 mb-2">
-                        Mon-Thur: 5.00AM - 10.00PM
+                        Mon-Thur: 5:00AM - 10:00PM
                     </div>
                     <div className="font-normal text-base leading-5 text-gray-300 dark:text-gray-600 mb-2">
-                        Fri-Sat: 5.00PM - 11.00PM
+                        Fri-Sat: 5:00PM - 11:00PM
                     </div>
                     <div className="font-normal text-base leading-5 text-gray-300 dark:text-gray-600">
-                        Sunday: 4.00PM - 9.00PM
+                        Sunday: 4:00PM - 9:00PM
                     </div>
                 </div>
             </div>
@@ -212,7 +222,6 @@ const Footer = () => {
             
             {/* Bottom section with copyright, social icons, and map */}
             <div className="px-16 pb-6 w-full">
-                {/* Copyright, Social Icons, and Map Row */}
                 <div className="flex items-center justify-between mb-4 flex-wrap gap-6">
                     <span className="font-normal text-base leading-5 text-gray-300 dark:text-gray-600">
                         &copy; 2024 Savoria. All rights reserved.

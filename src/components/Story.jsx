@@ -39,7 +39,7 @@ const CommunityIcon = () => (
 
 const Story = () => {
     return (
-        <section className="flex flex-col md:flex-row items-start gap-12 py-10">
+        <section id="story" className="flex flex-col md:flex-row items-start gap-12 py-10">
             {/* Left Side */}
             <div className="flex-1 max-w-xl">
                 {/* Title */}

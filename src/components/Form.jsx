@@ -192,7 +192,7 @@ export default function Form() {
     };
 
     return (
-        <div className="font-montserrat bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+        <div id="reservation" className="font-montserrat bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
             {/* Title */}
             <h1 className="font-playfair text-[#8b5a3c] dark:text-[#D97706] font-bold text-[36px] leading-[40px] text-center pt-24 mb-3">
                 Make a Reservation now
