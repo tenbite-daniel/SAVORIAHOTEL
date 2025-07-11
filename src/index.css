@@ -1,3 +1,31 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global dark mode styles */
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+  
+  /* Make sure all main containers inherit dark mode */
+  #root {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+}
+
+/* Additional dark mode overrides if needed */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #111827; /* gray-900 */
+  color: #f9fafb; /* gray-50 */
+}
