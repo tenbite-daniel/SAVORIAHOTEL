@@ -13,6 +13,7 @@ from langchain_core.output_parsers import StrOutputParser
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.messages import HumanMessage, AIMessage
+from gemini_embeddings import GeminiEmbeddings
 from throttling import apply_rate_limit
 from dotenv import load_dotenv
 load_dotenv()
@@ -44,7 +45,7 @@ llm = HuggingFaceEndpoint(
     top_p=0.95,
 )
 chat_model = ChatHuggingFace(llm=llm)
-embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embedding_model = GeminiEmbeddings()
 loader = TextLoader("context.txt")
 documents = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
