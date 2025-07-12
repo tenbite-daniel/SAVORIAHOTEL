@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+langchain-huggingface
+langchain-community
+faiss-cpu
+google-generativeai
+python-dotenv
