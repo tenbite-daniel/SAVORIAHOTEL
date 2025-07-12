@@ -1,3 +1,13 @@
+// Signature Dish Images
+import TruffleRisotto from "../assets/images/signature dishes/truffle-risotto.png";
+import OssoBuco from "../assets/images/signature dishes/osso-buco.png";
+import ClassicTiramisu from "../assets/images/signature dishes/classic-tiramisu.png";
+import LinguineAlle from "../assets/images/signature dishes/linguine-alle-vongole.png";
+import AntipastoDella from "../assets/images/signature dishes/antipasto-della-casa.png";
+import BranzinoAl from "../assets/images/signature dishes/branzino-al-sale.png";
+import PannaCotta from "../assets/images/signature dishes/panna-cotta.png";
+import CarbonaraRomana from "../assets/images/signature dishes/carbonara-romana.png";
+
 // Menu Images
 import startersImg from "../assets/images/Starters.png";
 import mainDishesImg from "../assets/images/MainDishes.jpg";
@@ -35,6 +45,83 @@ import DateOat from "../assets/images/deserts/Date & Oat Energy Bites.png";
 import FruitDelight from "../assets/images/deserts/Fruit Skewer Delight.png";
 import MangoPudding from "../assets/images/deserts/Mango Coconut Pudding.png";
 import MiniCheesecakes from "../assets/images/deserts/Mini Vanilla Bean Cheesecakes.png";
+
+// Signature Dishes Details
+export const signatureDishes = [
+    {
+        id: 1,
+        name: "Truffle Risotto",
+        description: "Creamy Arborio rice with black truffle and aged Parmesan",
+        category: "Vegetarian",
+        image: TruffleRisotto,
+        isSpecial: false,
+        price: 22.5,
+    },
+    {
+        id: 2,
+        name: "Osso Buco",
+        description: "Slow-braised veal shank with saffron risotto milanese",
+        category: "Non-Vegetarian",
+        image: OssoBuco,
+        isSpecial: false,
+        price: 26.0,
+    },
+    {
+        id: 3,
+        name: "Classic Tiramisu",
+        description:
+            "Traditional mascarpone dessert with espresso-soaked ladyfingers",
+        category: "Vegetarian",
+        image: ClassicTiramisu,
+        isSpecial: true,
+        price: 9.5,
+    },
+    {
+        id: 4,
+        name: "Linguine alle Vongole",
+        description: "Fresh clams with white wine, garlic, and parsley",
+        category: "Non-Vegetarian",
+        image: LinguineAlle,
+        isSpecial: true,
+        price: 18.0,
+    },
+    {
+        id: 5,
+        name: "Antipasto della Casa",
+        description: "Selection of cured meats, artisanal cheeses, and olives",
+        category: "Non-Vegetarian",
+        image: AntipastoDella,
+        isSpecial: true,
+        price: 14.0,
+    },
+    {
+        id: 6,
+        name: "Branzino al Sale",
+        description: "Mediterranean sea bass baked in sea salt crust",
+        category: "Non-Vegetarian",
+        image: BranzinoAl,
+        isSpecial: false,
+        price: 25.0,
+    },
+    {
+        id: 7,
+        name: "Panna Cotta",
+        description: "Silky vanilla custard with seasonal berry compote",
+        category: "Vegetarian",
+        image: PannaCotta,
+        isSpecial: true,
+        price: 8.0,
+    },
+    {
+        id: 8,
+        name: "Carbonara Romana",
+        description: "Traditional Roman pasta with pancetta and pecorino",
+        category: "Non-Vegetarian",
+        image: CarbonaraRomana,
+        isSpecial: false,
+        price: 16.0,
+    },
+];
 
 // Menu Details
 export const menuCategories = [
@@ -274,7 +361,7 @@ export const dishes = [
         description:
             "No-bake, naturally sweetened bites - great for vegetarians and a healthy kid-friendly option.",
         price: 3.5,
-        category: "Deserts",
+        category: "Desserts",
         image: DateOat,
     },
 ];
