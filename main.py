@@ -3,8 +3,8 @@ import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 from operator import itemgetter
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint, HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint 
+from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -50,7 +50,7 @@ loader = TextLoader("context.txt")
 documents = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 chunks = text_splitter.split_documents(documents)
-vector_db = Chroma.from_documents(documents=chunks, embedding=embedding_model)
+vector_db = FAISS.from_documents(documents=chunks, embedding=embedding_model)
 retriever = vector_db.as_retriever(search_kwargs={"k": 2})
 
 prompt = ChatPromptTemplate.from_messages(
