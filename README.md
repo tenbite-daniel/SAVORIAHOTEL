@@ -3,7 +3,7 @@
 A modern, responsive restaurant website built with React and Vite, featuring elegant design, dark/light theme toggle, and interactive user experience.
 
 ## 🌐 Live Demo
-[**View Live Website**](https://your-live-link-here.com) 
+https://resonant-begonia-82a549.netlify.app/
 
 
 ## TEAM MEMBERS INCLUDE:
