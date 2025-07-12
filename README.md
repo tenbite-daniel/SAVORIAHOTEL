@@ -2,9 +2,8 @@
 
 A modern, responsive restaurant website built with React and Vite, featuring elegant design, dark/light theme toggle, and interactive user experience.
 
-## 🌐 Live Demo
+##  Live Demo
 https://resonant-begonia-82a549.netlify.app/
-
 
 ## TEAM MEMBERS INCLUDE:
 Edmond Oketch-UI/UX 
