@@ -13,7 +13,9 @@ from langchain_core.output_parsers import StrOutputParser
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.messages import HumanMessage, AIMessage
-from .throttling import apply_rate_limit
+from throttling import apply_rate_limit
+from dotenv import load_dotenv
+load_dotenv()
 
 
 app = FastAPI(
