@@ -5,12 +5,7 @@ import img3 from "../assets/images/image3.png";
 import img4 from "../assets/images/image4.png";
 
 // Example slide images (replace with your own)
-const slides = [
-    { img: img1 },
-    { img: img2 },
-    { img: img3 },
-    { img: img4 },
-];
+const slides = [{ img: img1 }, { img: img2 }, { img: img3 }, { img: img4 }];
 
 const headline = "Savoria";
 const subheadline = "Where culinary artistry meets exceptional dining";
@@ -32,7 +27,7 @@ const Hero = () => {
         setTyped("");
         setTyping(true);
         let i = 0;
-        
+
         const type = () => {
             if (i < headline.length) {
                 setTyped(headline.substring(0, i + 1)); // Use substring instead of prev state
@@ -42,7 +37,7 @@ const Hero = () => {
                 setTyping(false);
             }
         };
-        
+
         type();
 
         // Cleanup function
@@ -79,14 +74,21 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero" className="w-screen min-h-[70vh] relative overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
+        <section
+            id="hero"
+            className="w-full min-h-[70vh] relative overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300"
+        >
             <div className="relative w-full h-[70vh] min-h-[320px]">
                 {slides.map((slide, idx) => (
                     <img
                         key={idx}
                         src={slide.img}
                         alt={`slide-${idx + 1}`}
-                        className={`absolute w-full h-full object-cover top-0 left-0 transition-opacity duration-700 ease-in-out ${idx === current ? "opacity-100 z-20" : "opacity-0 z-10"}`}
+                        className={`absolute w-full h-full object-cover top-0 left-0 transition-opacity duration-700 ease-in-out ${
+                            idx === current
+                                ? "opacity-100 z-20"
+                                : "opacity-0 z-10"
+                        }`}
                     />
                 ))}
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-30 bg-black/30">
@@ -109,7 +111,7 @@ const Hero = () => {
                         Explore Our Brand
                     </button>
                 </div>
-                <div className="absolute top-1/2 left-0 right-0 flex justify-between w-full pointer-events-none z-40">
+                <div className="absolute top-1/2 left-0 right-0 flex justify-between w-full pointer-events-none z-30">
                     <button
                         className="pointer-events-auto bg-black/30 text-white border-none text-2xl rounded-full w-11 h-11 flex items-center justify-center cursor-pointer hover:bg-[#8b5a3c]/70 dark:hover:bg-[#D97706]/70 transition-colors"
                         onClick={prevSlide}
@@ -125,11 +127,15 @@ const Hero = () => {
                         &#8594;
                     </button>
                 </div>
-                <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-50">
+                <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-30">
                     {slides.map((_, idx) => (
                         <span
                             key={idx}
-                            className={`w-3 h-3 rounded-full cursor-pointer inline-block transition-all duration-300 ${idx === current ? "bg-white shadow-[0_0_0_4px_rgba(139,90,60,0.3)] dark:shadow-[0_0_0_4px_rgba(217,119,6,0.3)]" : "bg-white/50"}`}
+                            className={`w-3 h-3 rounded-full cursor-pointer inline-block transition-all duration-300 ${
+                                idx === current
+                                    ? "bg-white shadow-[0_0_0_4px_rgba(139,90,60,0.3)] dark:shadow-[0_0_0_4px_rgba(217,119,6,0.3)]"
+                                    : "bg-white/50"
+                            }`}
                             onClick={() => goTo(idx)}
                         />
                     ))}

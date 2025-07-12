@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 const Menu = ({ categories, descriptions }) => {
     // Function to generate route paths from category names
     const getRoutePath = (categoryName) => {
-        switch(categoryName) {
+        switch (categoryName) {
             case "Starters":
                 return "/starters";
             case "Main Dishes":
                 return "/maindishes";
-            case "Drinks": 
+            case "Drinks":
                 return "/drinks";
             case "Desserts":
                 return "/desserts";
@@ -18,7 +18,10 @@ const Menu = ({ categories, descriptions }) => {
     };
 
     return (
-        <div id="menu" className="bg-white dark:bg-gray-900 min-h-screen border border-gray-200 dark:border-gray-700 font-sans transition-colors duration-300">
+        <div
+            id="menu"
+            className="bg-gray-50 dark:bg-gray-900 min-h-screen border border-gray-200 dark:border-gray-700 font-sans transition-colors duration-300"
+        >
             {/* MENU Title */}
             <h1 className="font-bold text-5xl text-center mt-10 mb-2 text-stone-700 dark:text-gray-100">
                 MENU
@@ -27,14 +30,14 @@ const Menu = ({ categories, descriptions }) => {
                 Welcome to our table. Explore a menu crafted with care,
                 featuring timeless favorites and comforting flavors.
             </div>
-            
+
             {/* Menu Grid Full Width BG */}
-            <div className="w-full bg-gray-50 dark:bg-gray-800 py-8 transition-colors duration-300">
+            <div className="w-full bg-gray-50 dark:bg-gray-900 py-8 transition-colors duration-300">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-12 px-4">
                     {categories.map((cat) => (
                         <div
                             key={cat.name}
-                            className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg flex flex-col p-5 relative shadow-md shadow-gray-300 dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-2xl transition-all duration-300"
+                            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg flex flex-col p-5 relative shadow-md shadow-gray-300 dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-2xl transition-all duration-300"
                         >
                             <img
                                 src={cat.img}
