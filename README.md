@@ -3,20 +3,16 @@
 A modern, responsive restaurant website built with React and Vite, featuring elegant design, dark/light theme toggle, and interactive user experience.
 
 ## 🌐 Live Demo
-[**View Live Website**](https://your-live-link-here.com) 
+[**View Live Website**](https://savoriahotel.vercel.app/maindishes) 
 
 
-## TEAM MEMBERS INCLUDE:
-Edmond Oketch - UI/UX 
-
-TENBITE DANIEL - FULL-STACK
-
-NTOITI FIDELIS - FULL-STACK
-
-IAN KARANJA - GEN AI
-
-KARANJA KARIUKI - GEN AI
-
+## 👥 Team Members & Roles:
+1. Edmond Oketch - UI/UX 
+2. TENBITE DANIEL - FULL-STACK
+3. NTOITI FIDELIS - FULL-STACK
+4. IAN KARANJA - GEN AI
+5. KARANJA KARIUKI - GEN AI
+   
 ## 📸 Screenshots
 
 ### Light Mode
