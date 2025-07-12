@@ -11,7 +11,6 @@ export default function ChatPopup(props) {
         "Tell me about wine pairings",
     ];
 
-    // Auto-scroll to bottom when messages change
     React.useEffect(() => {
         const messagesDiv = document.getElementById("messages-container");
         if (messagesDiv) {
@@ -31,30 +30,51 @@ export default function ChatPopup(props) {
         return newMessage;
     };
 
-    const sendMessageFromText = (text) => {
+    const sendMessageFromText = async (text) => {
         if (text.trim() === "") return;
-
-        // Add user message
         addMessage(text, true);
 
-        // Show typing indicator
-        const typingMessage = addMessage("Savoria is typing...", false, true);
+        const typingMessage = addMessage("Savoria chef is typing...", false, true);
 
-        // Simulate AI response after delay
-        setTimeout(() => {
+        const apiUrl = "https://savoria20-production.up.railway.app/ask_rag";
+        const requestBody = {
+            question: text,
+        };
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody),
+            });
+
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+
+            const data = await response.json();
+            const aiAnswer = data.answer;
+
             setMessages((prev) =>
                 prev.map((msg) =>
                     msg.id === typingMessage.id
-                        ? {
-                              ...msg,
-                              content:
-                                  "🍳 Hello! I'm your static chef. How can I help?",
-                              isTyping: false,
-                          }
+                        ? { ...msg, content: aiAnswer, isTyping: false }
                         : msg
                 )
             );
-        }, 3000);
+
+        } catch (error) {
+            console.error("Error fetching AI response:", error);
+            setMessages((prev) =>
+                prev.map((msg) =>
+                    msg.id === typingMessage.id
+                        ? { ...msg, content: "Sorry, I'm having trouble connecting. Please try again later.", isTyping: false }
+                        : msg
+                )
+            );
+        }
     };
 
     const handleSendMessage = () => {
@@ -106,11 +126,10 @@ export default function ChatPopup(props) {
                                 {messages.map((message) => (
                                     <div
                                         key={message.id}
-                                        className={`w-1/2 py-2 px-5 my-1 rounded-2xl ${
-                                            message.isUser
-                                                ? "ml-auto bg-amber-900 text-white text-right"
-                                                : "mr-auto bg-gray-200 dark:bg-gray-600 text-black dark:text-white text-left"
-                                        }`}
+                                        className={`w-1/2 py-2 px-5 my-1 rounded-2xl ${message.isUser
+                                            ? "ml-auto bg-amber-900 text-white text-right"
+                                            : "mr-auto bg-gray-200 dark:bg-gray-600 text-black dark:text-white text-left"
+                                            }`}
                                     >
                                         {message.content}
                                     </div>
