@@ -7,11 +7,15 @@ A modern, responsive restaurant website built with React and Vite, featuring ele
 
 
 ## TEAM MEMBERS INCLUDE:
-Edmond Oketch-UI/UX 
-TENBITE DANIEL-FULL-STACK 
-NTOITI FIDELIS-FULL-STACK
-IAN KARANJA-GEN AI
-KARANJA KARIUKI-GEN AI
+Edmond Oketch - UI/UX 
+
+TENBITE DANIEL - FULL-STACK
+
+NTOITI FIDELIS - FULL-STACK
+
+IAN KARANJA - GEN AI
+
+KARANJA KARIUKI - GEN AI
 
 ## 📸 Screenshots
 
