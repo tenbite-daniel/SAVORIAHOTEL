@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+venv/
+*.log
+*.sqlite3
+*.db
+.DS_Store
+.vscode/
+.idea/
+.ipynb_checkpoints/
+.git/
+.gitignore
