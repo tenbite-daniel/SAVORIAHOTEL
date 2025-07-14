@@ -36,7 +36,7 @@ export default function ChatPopup(props) {
 
         const typingMessage = addMessage("Savoria chef is typing...", false, true);
 
-        const apiUrl = "https://savoria20-production.up.railway.app/ask_rag";
+        const apiUrl = "https://savoria-25-production.up.railway.app/ask_rag";
         const requestBody = {
             question: text,
         };
