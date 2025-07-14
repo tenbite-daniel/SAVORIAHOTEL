@@ -102,7 +102,6 @@ async def clear_memory():
 @app.post("/ask_rag")
 async def ask_rag_endpoint(request: RAGRequest):
     user_input = request.question
-    apply_rate_limit("global_unauthenticated_user")
     response = rag_chain.invoke({"input": user_input})
     chat_history.add_message(HumanMessage(content=user_input))
     chat_history.add_message(AIMessage(content=response))
