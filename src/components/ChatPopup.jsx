@@ -70,7 +70,7 @@ export default function ChatPopup(props) {
             setMessages((prev) =>
                 prev.map((msg) =>
                     msg.id === typingMessage.id
-                        ? { ...msg, content: "Sorry, I'm having trouble connecting. Please try again later.", isTyping: false }
+                        ? { ...msg, content: "Please try again later.", isTyping: false }
                         : msg
                 )
             );
