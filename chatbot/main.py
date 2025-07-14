@@ -21,7 +21,7 @@ load_dotenv()
 
 app = FastAPI(
     title="Simple LangChain RAG API",
-    description="An API for a single, shared conversation with a knowledge base.",
+    description="An API for a conversation with a knowledge base.",
 )
 
 app.add_middleware(
@@ -75,10 +75,6 @@ prompt = ChatPromptTemplate.from_messages(
 
 
 def get_history(input_dict):
-    """
-    A simple function that ignores its input and returns the messages
-    from the chat history object.
-    """
     return chat_history.messages
 chat_history = ChatMessageHistory()
 
@@ -105,9 +101,6 @@ async def clear_memory():
 
 @app.post("/ask_rag")
 async def ask_rag_endpoint(request: RAGRequest):
-    """
-    Receives a question, uses memory, and returns an answer.
-    """
     user_input = request.question
     apply_rate_limit("global_unauthenticated_user")
     response = rag_chain.invoke({"input": user_input})
